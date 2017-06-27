@@ -81,19 +81,28 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="code ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 alias pyd="cd ~/Desktop/Code/Python/"
 alias rbd="cd ~/Desktop/Code/Ruby/"
 alias ubc="cd ~/Documents/UBC/3rd\ year/"
-alias code="cd ~/Desktop/Code/"
 alias p="python"
 alias la="ls -a"
 alias cs='ssh n1h0b@thetis.ugrad.cs.ubc.ca'
+alias cv="cd .."
+alias cml="cd $GOPATH/src/github.com/ubclaunchpad/cumulus"
 
-# added by travis gem
+# Added by travis gem
 [ -f /Users/bfbachmann/.travis/travis.sh ] && source /Users/bfbachmann/.travis/travis.sh
 
-# add os161 and rbenv to path
+# Add os161 and rbenv to path
 export PATH="$HOME/tools/sys161/bin:$HOME/tools/os161/bin:$PATH:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
+
+# Set up Go path
+export GOPATH="/Users/bfbachmann/Desktop/Code/Go"
+export PATH="$PATH:$GOPATH/bin"
+
+# Vim config
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
